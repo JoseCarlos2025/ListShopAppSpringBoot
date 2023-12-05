@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>additem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input
+        formControlName="name"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">Add Iteem</ion-button>
+        <ion-button (click)="gotoItem()" color="secondary" shape="full" expand="block">back</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

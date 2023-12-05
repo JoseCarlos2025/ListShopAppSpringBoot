@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ListApp
+    </ion-title>
+    <ion-icon class="settings-button" (click)="mostrarOpciones()" name="cog-outline" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let l of Listshop">
+    <ion-card-header (click)="gotolist(l.id)">
+      <ion-card-title>list name: {{l.listName}}</ion-card-title>
+      <ion-card-subtitle>date shop: {{l.dateShop}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item>
+      <ion-icon (click)="deleteListShop(l.id)" name="trash" slot="end"></ion-icon>
+      <ion-button (click)="presentAlert(l.id)">Edit</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab (click)="gotoaddlist()" slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

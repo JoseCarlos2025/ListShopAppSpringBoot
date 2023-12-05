@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Items</ion-title>
+    <ion-icon class="home-button" (click)="gotohome()" name="Home" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let i of Item">
+    <ion-card-header>
+      <ion-card-title>list name: {{i.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-icon (click)="deleteItem(i.id)" name="trash" slot="end"></ion-icon>
+      <ion-button (click)="presentAlert(i.id)">Edit</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab (click)="gotoadditem()" slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
